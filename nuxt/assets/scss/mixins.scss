@@ -1,0 +1,13 @@
+@mixin clip($size: 1rem, $border-width: .125rem) {
+  clip-path: polygon(0 0, calc(100% - #{$size}) 0, 100% #{$size}, 100% 100%, #{$size} 100%, 0 calc(100% - #{$size}));
+
+  &:before {
+    bottom: 0;
+    left: calc(-#{$size} - #{$border-width});
+  }
+
+  &:after {
+    top: 0;
+    right: calc(-#{$size} - #{$border-width});
+  }
+}

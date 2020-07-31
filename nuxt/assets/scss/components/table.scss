@@ -1,0 +1,27 @@
+.table {
+  thead {
+    th {
+      border: none;
+      color: #6b54b6;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  }
+
+  td {
+    border: none;
+    font-weight: 500;
+    vertical-align: middle;
+  }
+
+  &_hubs {
+    border-spacing: 0 1rem;
+    border-collapse: separate;
+
+    tr {
+      background-color: rgba(107, 84, 182, .1);
+      filter: drop-shadow(0 3px 7px rgba(14, 8, 18, .44));
+      clip-path: polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px));
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.btn {
+  @include clip();
+
+  color: #fff;
+  border-radius: 0;
+  position: relative;
+  padding: .5rem 2rem;
+  background-color: transparent;
+
+  &:before, &:after {
+    content: " ";
+    width: 60px;
+    height: .125rem;
+    position: absolute;
+    transform: rotate(45deg);
+    background-color: $primary;
+  }
+
+  &-primary {
+    border: .125rem solid $primary;
+  }
+}

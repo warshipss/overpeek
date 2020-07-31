@@ -1,0 +1,120 @@
+body {
+  zoom: 1;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  overflow-x: hidden !important;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+
+  &__image {
+    width: 2rem;
+    height: 2rem;
+    margin-right: .5rem;
+  }
+
+  &__value {
+    color: #f1c40f;
+    font-weight: bold;
+    margin-top: .5rem;
+  }
+}
+
+.logo {
+  $n: &;
+
+  display: flex;
+  padding: 3rem 0;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 500ms all ease;
+
+  &_small {
+    padding: 1rem;
+    flex-direction: row;
+    justify-content: center;
+
+    #{$n}__image {
+      width: 4rem;
+      height: 4rem;
+      margin-bottom: 0;
+      margin-right: 2rem;
+    }
+
+    #{$n}__text {
+      font-size: 2rem;
+    }
+  }
+
+  &__image {
+    width: 7rem;
+    height: 7rem;
+    margin-bottom: 2rem;
+    transition: all 500ms ease;
+  }
+
+  &__text {
+    color: #fff;
+    font-weight: bold;
+    font-size: 2.5rem;
+    transition: all 500ms ease;
+  }
+}
+
+.display-2 {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-left: 1.5rem;
+  text-transform: uppercase;
+  border-left: .19rem solid #5821a9;
+}
+
+.container-fluid {
+  padding: 0 2.5rem;
+}
+
+.app {
+  padding-top: 10rem;
+}
+
+.container {
+  &_main-nav {
+    height: 3rem;
+    border-top: 1px solid #333;
+  }
+}
+
+.btn {
+  &-faceit {
+    @include button-variant($faceit, $faceit);
+
+    font-weight: bold;
+  }
+
+  &-play {
+    @include button-variant($faceit, $faceit);
+
+    font-size: 1.75rem;
+    font-weight: bold;
+    padding: 1rem 2rem;
+  }
+}
+
+.__nuxt-error-page {
+  @extend .layout__content;
+
+  background: $body-bg;
+
+  .title {
+    color: #f3f3f3;
+    font-weight: bold;
+  }
+
+  .description {
+    text-transform: uppercase;
+  }
+}

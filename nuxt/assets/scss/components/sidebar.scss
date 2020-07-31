@@ -1,0 +1,11 @@
+.sidebar {
+  z-index: 10;
+  height: 100%;
+  width: 22rem;
+  display: flex;
+  position: fixed;
+  min-height: 100vh;
+  flex-direction: column;
+  box-shadow: 1rem 0 1rem 0 rgba(0, 0, 0, .25);
+  background: url('/img/bg/sidebar.jpg') repeat-x;
+}

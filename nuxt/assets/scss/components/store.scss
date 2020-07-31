@@ -1,0 +1,37 @@
+.store {
+  display: flex;
+  padding: 1rem;
+  flex-wrap: wrap;
+
+  &__item {
+    width: 12rem;
+    height: 16rem;
+    padding: 1rem;
+    margin: 1rem .1rem;
+    background-color: #20132a;
+    box-shadow: 0 3px 7px rgba(14, 8, 18, .44);
+    transition: .3s cubic-bezier(.21, .04, 0, 1.07);
+
+    &:hover {
+      @include clip();
+
+      transform: translateY(-1.5rem);
+    }
+  }
+
+  &__label {
+    color: #6b54b6;
+    font-size: .75rem;
+    letter-spacing: .1rem;
+  }
+
+  &__skin {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__image {
+    @extend .img-fluid;
+  }
+}

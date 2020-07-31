@@ -1,0 +1,48 @@
+.jumbotron {
+  border-radius: 0;
+  padding: 3.5rem 0;
+  position: relative;
+  background-size: cover;
+  background-color: $body-bg;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    content: '';
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, .1);
+  }
+
+  &_csgo {
+    background-position-y: -12rem;
+    background-image: url('/img/bg/csgo.jpg');
+  }
+
+  &_deposit {
+    background-image: url('/img/bg/deposit.jpg');
+
+    &:before {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &_store {
+    background-image: url('/img/bg/store.jpg');
+  }
+
+  &__inner {
+    margin: 0 2.5rem;
+    position: relative;
+    padding-left: 2.5rem;
+    border-left: .375rem solid #fff;
+  }
+
+  &__heading {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+  }
+}

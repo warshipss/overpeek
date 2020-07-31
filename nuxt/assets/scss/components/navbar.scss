@@ -1,0 +1,44 @@
+.navbar {
+  $n: &;
+
+  padding: 0;
+
+  &-landing {
+    border-bottom: 1px solid #333;
+    background: transparent !important;
+  }
+
+  &-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &-dark {
+    background: transparent;
+
+    #{$n}-nav {
+      .nav-link {
+        color: #fff;
+        height: 4rem;
+        display: flex;
+        padding: 0 2rem;
+        font-weight: bold;
+        font-size: 0.9rem;
+        align-items: center;
+        text-transform: uppercase;
+        transition: 500ms all ease;
+        background: rgba(255, 255, 255, 0.5);
+
+        &.active {
+          background: #fff;
+          color: $body-bg;
+        }
+
+        &:hover {
+          color: $faceit;
+        }
+      }
+    }
+  }
+}

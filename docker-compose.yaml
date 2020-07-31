@@ -1,0 +1,85 @@
+version: '3.7'
+
+services:
+  api:
+    image: abiosoft/caddy:no-stats
+    restart: always
+    networks:
+      backend:
+      reverse:
+        aliases:
+          - goldfish
+    volumes:
+      - ./api:/app
+      - caddy-data:/root/.caddy
+      - ./configs/Caddyfile:/etc/Caddyfile
+
+  nuxt:
+    build:
+      context: .
+      dockerfile: ./configs/website.dockerfile
+    restart: always
+    env_file:
+      - .env
+    networks:
+      reverse:
+        aliases:
+          - goldfish_nuxt
+    volumes:
+      - ./nuxt:/app
+
+  db:
+    image: mysql:8
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - backend
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    networks:
+      backend:
+      reverse:
+        aliases:
+          - goldfish_pma
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+
+  php:
+    build:
+      context: .
+      dockerfile: ./configs/php.dockerfile
+    restart: always
+    environment:
+      CONTAINER_ROLE: fpm
+    env_file:
+      - .env
+    networks:
+      - backend
+    volumes:
+      - ./api:/app
+
+  redis:
+    image: redis
+    restart: always
+    volumes:
+      - redis-data:/data
+    networks:
+      - backend
+
+networks:
+  backend:
+  reverse:
+    external:
+      name: caddy_reverse
+
+volumes:
+  db-data:
+  redis-data:
+  caddy-data:

@@ -1,0 +1,32 @@
+/*
+ * Fonts
+ */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap&subset=cyrillic');
+
+/*
+ * Variables
+ */
+@import "variables",
+  "mixins";
+
+/*
+ * Bootstrap
+ */
+@import "~bootstrap/scss/bootstrap";
+
+/*
+ * Custom code
+ */
+@import "overrides",
+  "components/nav",
+  "components/user",
+  "components/store",
+  "components/match",
+  "components/table",
+  "components/navbar",
+  "components/footer",
+  "components/layout",
+  "components/sidebar",
+  "components/buttons",
+  "components/landing",
+  "components/jumbotron";

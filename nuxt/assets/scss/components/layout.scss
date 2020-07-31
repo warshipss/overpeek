@@ -1,0 +1,15 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+
+  &__main {
+    flex-grow: 1;
+    display: flex;
+    padding-left: 22rem;
+    flex-direction: column;
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+}

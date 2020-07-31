@@ -1,0 +1,42 @@
+.landing {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: $body-bg url('/img/bg/csgo.jpg') center no-repeat;
+  background-size: cover;
+
+  .login-area {
+    text-align: center;
+    margin: 2rem 0 4rem 0;
+
+    .btn {
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 1rem 2rem;
+    }
+  }
+
+  .benefit {
+    @extend .col-md-4;
+
+    text-align: center;
+
+    &__image {
+      @extend .img-fluid;
+
+      width: 5rem;
+      margin-bottom: 2rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    &__details {
+      color: #a0a0a0;
+    }
+  }
+}

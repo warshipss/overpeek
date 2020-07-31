@@ -1,0 +1,24 @@
+{
+  "name": "goldfish",
+  "version": "1.0.0",
+  "description": "Play FaceIT for skins!",
+  "author": "Alex Balatsky",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.9.0",
+    "@nuxtjs/axios": "^5.9.6",
+    "bootstrap": "^4.4.1",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.13.0",
+    "nuxt": "^2.12.1",
+    "nuxt-i18n": "^6.7.0",
+    "sass-loader": "^8.0.2"
+  },
+  "devDependencies": {}
+}

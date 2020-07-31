@@ -1,0 +1,54 @@
+.match {
+  $n: &;
+
+  display: flex;
+
+  &_mb3 {
+    margin-bottom: 3rem;
+  }
+
+  &__team {
+    width: 40%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: rgba(107, 84, 182, .1);
+    clip-path: polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,20px 100%,0 calc(100% - 20px));
+
+    &--first {
+      #{$n}__team-image {
+        margin-left: 1rem;
+      }
+    }
+
+    &--last {
+      flex-direction: row-reverse;
+
+      #{$n}__team-image {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &__team-title {
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  &__team-image {
+    @include clip();
+
+    width: 6rem;
+    height: 6rem;
+    //border-radius: 5rem;
+  }
+
+  &__score {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
